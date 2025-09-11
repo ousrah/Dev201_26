@@ -1,8 +1,8 @@
-wifi ISMO-S2/03022023
+wifi : ISMO-S2/03022023
 
-pfsense dev201/dev201
+pfsense :  http://10.1.0.4        dev201/dev201
 
-mot de passe des pc  stagiaire/123456
+mot de passe des pc :  stagiaire/123456
 
 git clone https://www.github.com/ousrah/Dev201_26
 

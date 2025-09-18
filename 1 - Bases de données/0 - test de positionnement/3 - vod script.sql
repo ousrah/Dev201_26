@@ -145,3 +145,7 @@ INSERT INTO Contenu_Acteur (id_contenu, id_acteur) VALUES
 (3, 1), -- Forrest Gump: Tom Hanks
 (3, 4); -- Forrest Gump: Morgan Freeman (pour l'exemple)
 
+
+insert into utilisateurs values (null,'a','a@a.a','123','2025-10-1','basique');
+
+insert into historique_visionnage values (null, 1,1,'2025-10-1',5);

@@ -158,9 +158,30 @@ join contenu_genre cg using(id_contenu) join genres g using (id_genre)
 Group by g.nom_genre 
 having nombre_contenu>1;
 -- 14. Afficher le nom de l'utilisateur qui a regardé le plus de minutes au total.
+use vod_platform;
 select nom_utilisateur,sum(minutes_vues)  as nombre_totale
 from utilisateurs u
 join historique_visionnage using(id_utilisateur)
 group by u.nom_utilisateur
 order by nombre_totale desc
 limit 1;
+
+with f as ( 
+select nom_utilisateur,sum(minutes_vues)  as nombre_totale
+from utilisateurs u
+join historique_visionnage using(id_utilisateur)
+group by u.nom_utilisateur)
+
+
+select nom_utilisateur,sum(minutes_vues)  as nombre_totale
+from utilisateurs u
+join historique_visionnage using(id_utilisateur)
+group by u.nom_utilisateur
+having nombre_totale = (select max(nombre_totale) from f);
+
+
+
+select * from historique_visionnage;
+
+
+
